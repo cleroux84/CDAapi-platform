@@ -54,5 +54,6 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
-          base: master
+          branch: master
+          base: main
           token: ${{ secrets.PAT }}

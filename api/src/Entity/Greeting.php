@@ -15,16 +15,16 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Greeting
 {
     /**
-     * The entity ID
-     *  
+     * The entity ID.
+     *
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private ?int $id = null;
-//test
+    //test
     /**
-     * A nice person
+     * A nice person.
      *
      * @ORM\Column
      */
@@ -34,6 +34,5 @@ class Greeting
     public function getId(): ?int
     {
         return $this->id;
-        
     }
 }
