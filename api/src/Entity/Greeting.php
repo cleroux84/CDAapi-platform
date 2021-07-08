@@ -35,6 +35,5 @@ class Greeting
     {
         return $this->id;
         
-        
     }
 }
