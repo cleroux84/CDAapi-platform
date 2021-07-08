@@ -1,12 +1,5 @@
-<<<<<<< HEAD
-# api/fixtures/books.yaml
-App\Entity\Book:
-    book_{1..100}:
-        name: <name()>
-=======
 App\Entity\Book:
     book_{1..100}:
         name: <sentence(4)>
->>>>>>> e87503e5674cb3828f221b40f149f95448376bf3
         author: <name()>
         datePublished: <dateTime()>
