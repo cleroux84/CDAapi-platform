@@ -58,11 +58,14 @@ jobs:
           base: main
           token: ${{ secrets.PAT }}
       - name: deploy website
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
-          github-token: ${{ secrets.PAT }} #Optional 
-          vercel-args: '--prod' #Optional
-          vercel-org-id: ${{ secrets.ORG_ID}}  #Required
-          vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
-          working-directory: ./pwa
+
+              runs-on: ubuntu-latest
+
+                  with:
+                    vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+                    github-token: ${{ secrets.PAT }} #Optional 
+                    vercel-args: '--prod' #Optional
+                    vercel-org-id: ${{ secrets.ORG_ID}}  #Required
+                    vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
+                    working-directory: ./pwa
 
