@@ -58,6 +58,11 @@ jobs:
           base: main
           token: ${{ secrets.PAT }}
       - name: deploy website
+          on: push:
+            branches:
+          - main
+          pull_request: ~
+          workflow_dispatch: ~
           jobs:
             deploy:
               runs-on: ubuntu-latest
