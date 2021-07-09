@@ -59,11 +59,11 @@ jobs:
           token: ${{ secrets.PAT }}
       - name: deploy website
         uses: amondnet/vercel-action@v20
-          with:
-            vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
-            github-token: ${{ secrets.PAT }} #Optional 
-            vercel-args: '--prod' #Optional
-            vercel-org-id: ${{ secrets.ORG_ID}}  #Required
-            vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
-            working-directory: ./pwa
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+          github-token: ${{ secrets.PAT }} #Optional 
+          vercel-args: '--prod' #Optional
+          vercel-org-id: ${{ secrets.ORG_ID}}  #Required
+          vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
+          working-directory: ./pwa
 
