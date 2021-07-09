@@ -58,7 +58,6 @@ jobs:
           base: main
           token: ${{ secrets.PAT }}
       - name: deploy website
-          on:
           jobs:
             deploy:
               runs-on: ubuntu-latest
