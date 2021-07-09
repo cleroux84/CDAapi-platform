@@ -16,7 +16,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-     
+    
+      - name: Wait for services
+        run: |
+          while status="$(docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" "$(docker-compose ps -q php)")"; do
+            case $status in
+              starting) sleep 1;;
+              healthy) exit 0;;
+              unhealthy)
+                docker-compose ps
+                docker-compose logs
+                exit 1
+              ;;
+            esac
+          done
+          exit 1
+  
       - name: deploy website
         uses: amondnet/vercel-action@v20
         with:
